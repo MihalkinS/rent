@@ -1,0 +1,46 @@
+img {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.img-thumbnail {
+    max-width: none;
+}
+
+.item-block {
+    position: relative;
+    border: 1px solid #E0E0E0;
+    padding: 10px;
+    margin: 5px;
+}
+
+.favorite-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background: #ffffff;
+    border: 1px solid #E0E0E0;
+    padding: 3px;
+    right: 2px;
+    bottom: 2px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+ .favorite-block i {
+    color: gold;
+} 
+
+.link-read-more {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    img {
+        width: 150px;
+        height: 150px;
+    }
+}

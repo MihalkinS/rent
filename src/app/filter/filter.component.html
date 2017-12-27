@@ -1,0 +1,76 @@
+<form (ngSubmit)="onApplyFilter()" ngNativeValidate>
+    <legend>Фильтры</legend>
+    <fieldset [attr.disabled]="enableFilter ? null : ''">
+        <div class="form-group">
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <label>Покупка</label>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="switch-block">
+                    <label class="switch">
+                        <input type="checkbox" name="torent" [(ngModel)]="filter.toRent">
+                        <span class="slider-between-two round"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <label>Аренда</label>
+            </div>
+        </div>
+        <br>
+        <label>Цена</label>
+        <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <input type="number" class="form-control" name="price-min" id="price-min" placeholder="от" value="0" [(ngModel)]="filter.price_min"
+                    pattern="[0-9]+">
+            </div>
+            <div class="col-md-6 col-md-6 col-sm-6 col-xs-6">
+                <input type="number" class="form-control" name="price-max" id="price-max" placeholder="до" value="99999" [(ngModel)]="filter.price_max"
+                    pattern="[0-9]+">
+            </div>
+        </div>
+        <br>
+        <br>
+        <label>Количество комнат</label>
+        <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <input type="number" class="form-control" name="bedroom-min" id="bedroom-min" placeholder="от" value="0" [(ngModel)]="filter.bedroom_min"
+                    pattern="[0-9]+">
+            </div>
+            <div class="col-md-6 col-md-6 col-sm-6 col-xs-6">
+                <input type="number" class="form-control" name="bedroom-max" id="bedroom-max" placeholder="до" value="40" [(ngModel)]="filter.bedroom_max"
+                    pattern="[0-9]+">
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="form-group">
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <label>С фото</label>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="switch-block">
+                    <label class="switch">
+                        <input type="checkbox" name="has-photo" checked="true" [(ngModel)]="filter.has_photo">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="sort">Сортировать:</label>
+            <select class="form-control" name="sort" id="sort" [(ngModel)]="filter.sorting_type">
+                <option value="relevancy">По рейтингу</option><!-- relevancy -->
+                <option value="bedroom_lowhigh">Количеству комнат(по возрастанию)</option><!-- bedroom_lowhigh -->
+                <option value="bedroom_highlow">Количеству комнат(по убыванию)</option><!-- bedroom_highlow -->
+                <option value="price_lowhigh">По цене(начиная с дешевых)</option><!-- price_lowhigh -->
+                <option value="price_highlow">По цене(начиная с дорогих)</option><!-- price_highlow -->
+                <option value="newest">Сначала новые</option><!-- newest -->
+                <option value="oldest">Сначала старые</option><!-- oldest -->
+                <option value="random">Случайным образом</option><!-- random -->
+            </select>
+        </div>
+        <button class="btn btn-success btn-block">Применить</button>
+    </fieldset>
+</form>

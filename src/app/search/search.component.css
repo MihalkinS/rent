@@ -1,0 +1,17 @@
+div .search-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.favorite {
+    color:gold;
+}
+
+#search {
+    min-width: 270px;
+}
+
+@media (max-width: 768px) {
+    
+}

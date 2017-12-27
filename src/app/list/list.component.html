@@ -1,0 +1,8 @@
+<div class="list-group" *ngIf="flats.length">
+    <app-list-item *ngFor="let flat of flats  
+        | paginate: { itemsPerPage: 20, currentPage: pagination.page, totalItems: pagination.total_results, id: 'server' }" [flat]="flat" (onShow)="onShow($event)" (onFavorite)="onFavorite($event)"></app-list-item>
+</div>
+<div class="has-text-centered">
+    <div class="spinner" [ngClass]="{ 'hidden': !loading }"></div>
+    <pagination-controls *ngIf="flats.length" (pageChange)="onPageChange($event)" id="server"></pagination-controls>
+</div>

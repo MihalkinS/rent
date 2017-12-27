@@ -1,0 +1,40 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" (click)="close()">&times;</button>
+      <h4 class="modal-title">{{ title }}</h4>
+    </div>
+    <div class="modal-body">
+      <ul class="list-group">
+        <li class="list-group-item" *ngIf="bedroom_number > 0">
+          <span class="badge">{{ bedroom_number }}</span>
+          Количество комнат
+        </li>
+        <li class="list-group-item" *ngIf="bathroom_number > 0">
+          <span class="badge">{{ bathroom_number }}</span>
+          Количество ванных комнат
+        </li>
+        <li class="list-group-item" *ngIf="floor > 0">
+          <span class="badge">{{ floor }}</span>
+          Этаж
+        </li>
+        <li class="list-group-item" *ngIf="car_spaces > 0">
+          <span class="badge">{{ car_spaces }}</span>
+          Количество парковочных мест
+        </li>
+        <li class="list-group-item" *ngIf="property_type">
+          <span class="badge">{{ property_type }}</span>
+          Тип
+        </li>
+        <li class="list-group-item" *ngIf="price_formatted">
+          <span class="badge">{{ price_formatted }}</span>
+          Цена
+        </li>
+        <li class="list-group-item">
+          <a href="{{ lister_url }}">Больше информации</a>
+        </li>
+      </ul>
+      <img src="{{ img_url }}">
+    </div>
+  </div>
+</div>

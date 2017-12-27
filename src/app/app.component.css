@@ -1,0 +1,15 @@
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+.filter-block {
+    position: relative;
+    background: #fafafb;
+    border: 1px solid #E0E0E0;
+    padding: 10px;
+    margin: 5px;
+}
+
+@media (max-width: 768px) {
+    
+}

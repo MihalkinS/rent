@@ -1,0 +1,20 @@
+<form class="form-inline" (ngSubmit)="search()" ngNativeValidate>
+  <div class="col-lg-6 col-lg-offset-2 col-md-6 col-md-offset-2 col-sm-12 col-xs-12">
+    <div class="search-block">
+      <div class="form-group">
+        <label class="sr-only control-label" for="search">Hidden</label>
+        <input type="text" class="form-control input-lg" placeholder="Город" name="search" id="search" list="cities" (input)="onSearchChange($event.target.value)"
+          [(ngModel)]="searchstring" required pattern="[A-Za-z\.\-\d\x27]+"> <!-- \x27 -> ' -->
+        <datalist id="cities">
+          <option *ngFor="let city of cities">{{city}}</option>
+        </datalist>
+      </div>
+        <button class="btn btn-link btn-lg" type="submit" [style.visibility]="searchBtnVisiability">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+      <button class="btn btn-link btn-lg" type="button">
+        <i class="glyphicon glyphicon-star favorite" (click)="favorite()"></i>
+      </button>
+    </div>
+  </div>
+</form>

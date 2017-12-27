@@ -1,0 +1,21 @@
+<div class="item-block">
+    <div class="media">
+      <div class="media-left">
+          <img src="{{ flat.img_url }}" (click)="show()" class="img-thumbnail center-block">
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">{{ flat.title }}</h4>
+        <h3>
+          <b>{{ flat.price_formatted }}</b>
+        </h3>
+        <h4>
+            {{ flat.summary }} 
+        </h4>
+        <small>{{ flat.updated_in_days_formatted }}</small>
+        <br><br>
+        <button type="button" (click)="show()" class="btn btn-primary">Read more</button>
+      </div>    
+    </div>
+    <div class="favorite-block">
+        <i class="glyphicon text-muted" (click)="toggleFavorite()" [class.glyphicon-star]="flat.favorite" [class.glyphicon-star-empty]="!flat.favorite"></i>
+    </div>
